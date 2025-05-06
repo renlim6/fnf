@@ -21,8 +21,8 @@ body {
     height: 100vh;
 
     background-image: 
-        linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)), 
-        url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Friday_Night_Funkin%27_logo.svg/330px-Friday_Night_Funkin%27_logo.svg.png);
+        linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+ 
 
     background-position: center;
 
@@ -602,4 +602,3 @@ body {
         font-size: 0.6rem;
     }
 }
-
