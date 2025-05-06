@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FNF Fan Site</title>
+  <link rel="stylesheet" href="ind.css">
+</head>
+<body>
+
+  <!-- Главный экран -->
+  <div class="hero">
+    <div class="content">
+      <h1>Friday Night Funkin'</h1>
+      <p style="color: #ff00cc;">Погрузись в ритм-баттлы!</p>
+      <a href="#nav" class="start-btn">Начать</a>
+    </div>
+  </div>
+
+  <header class="sticky-header">
+    <nav id="nav" class="navbar">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Friday_Night_Funkin%27_logo.svg/330px-Friday_Night_Funkin%27_logo.svg.png" alt="Logo">
+      </div>
+
+      <!-- Иконка бургера -->
+      <div class="burger" onclick="toggleMenu()">☰</div>
+
+      <!-- Навигационные ссылки -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Overview</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#songs-fnf">Songs</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#mod-characters">Mods</a></li>
+        <li><a href="#fnf-guide">Guide</a></li>  
+      </ul>
+    </nav>
+  </header>
+
+  <!-- О игре -->
+  <section id="about" class="section">
+    <h2>О игре</h2>
+
+    <h3>Разработчики</h3>
+    <p>Создатели игры:</p>
+    <ul>
+      <li><strong>Ninjamuffin99</strong> — программист;</li>
+      <li><strong>Kawaisprite</strong> — композитор;</li>
+      <li><strong>PhantomArcade</strong> и <strong>Evilsk8r</strong> — художники.</li>
+    </ul>
+
+    <h3>Как появилась игра</h3>
+    <p>Создание на Ludum Dare 47. В 2020 году прошёл геймджем (соревнование по созданию игр за ограниченное время) под темой "Stuck in a Loop". Команда из четырёх человек решила сделать музыкальную игру, в которой герой застрял в серии баттлов. Так и родилась идея FNF.</p>
+
+    <h3>Популярность</h3>
+    <p>Friday Night Funkin’ быстро завоевала популярность благодаря вирусному эффекту в соцсетях, модам и ностальгии по флеш-играм.</p>
+
+    <h3>Интересные факты</h3>
+    <ul>
+      <li>Сообщество моддеров сделало игру ещё популярнее — появилось тысячи модов, включая Tricky, Whitty, Sonic.exe и другие.</li>
+      <li>Игра была создана всего за 3 недели в рамках Ludum Dare 47 — игрового джема.</li>
+      <li>Главного героя зовут Boyfriend, а его цель — победить всех соперников в музыкальных баттлах, чтобы быть с Girlfriend.</li>
+      <li>Папа Girlfriend — бывшая рок-звезда, и он первый босс игры.</li>
+      <li>Музыку к игре написал Kawai Sprite — он стал известен благодаря уникальному звучанию треков.</li>
+      <li>В игре используются стрелки как ноты, и это сделано в стиле классических DDR-игр.</li>
+      <li>В одной из песен Girlfriend сидит на бумбоксе — это отсылка к классическим хип-хоп клипам.</li>
+      <li>Первоначально игра была выложена на Newgrounds, что помогло ей быстро обрести популярность среди старых фанатов флеш-игр.</li>
+      <li>FNF вдохновлён флеш-культурой 2000-х, а его визуальный стиль и музыка — смесь ретро и современных трендов.</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Галерея FNF</h2>
+    <div class="slider">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/3/3a/Tutorial.gif/revision/latest?cb=20210328093239&path-prefix=ru" alt="Stage">
+
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/d/de/Guns.gif/revision/latest?cb=20220102182716&path-prefix=ru" alt="Stage">
+
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/3/39/Bopeebo.gif/revision/latest?cb=20210108165519&path-prefix=ru" alt="Senpai Stage">
+
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/5/52/High.gif/revision/latest?cb=20210510010852&path-prefix=ru" alt="Senpai Stage">
+
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/c/ce/Pico_Song.gif/revision/latest?cb=20210511114422&path-prefix=ru" alt="Senpai Stage">
+
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/d/d4/%D0%9F%D1%83%D0%B3%D0%B0%D0%BB%D0%BA%D0%B8.gif/revision/latest?cb=20210108031143&path-prefix=ru" alt="Pixel BG">
+
+      <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/0/08/Roses.gif/revision/latest?cb=20210509081654&path-prefix=ru" alt="Pixel BG">
+
+    </div>
+  </section>
+
+  <!-- Музыкальный раздел -->
+  <section id="songs-fnf" class="section">
+    <h2>Музыка FNF</h2>
+
+    <div class="music-grid">
+      <!-- Официальные треки -->
+      <div class="music-category">
+        <h3>Официальные треки</h3>
+        <div class="track-list">
+          <div class="track" data-audio="music\kawai-sprite-tutorial.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/3/33/Girlgif1.gif/revision/latest?cb=20210518043416&path-prefix=ru" alt="Tutorial">
+            <p>Tutorial</p>
+          </div>
+          <div class="track" data-audio="music\kawai-sprite-bopeebo.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/0/0b/Dadgif1.gif/revision/latest?cb=20210518050238&path-prefix=ru" alt="Bopeebo">
+            <p>Bopeebo</p>
+          </div>
+          <div class="track" data-audio="music\kawai-sprite-high.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/b/bd/Momgif.gif/revision/latest?cb=20210308031459&path-prefix=ru" alt="Fresh">
+            <p>High</p>
+          </div>
+          <div class="track" data-audio="music\kawai-sprite-pico.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/1/16/Picogif1.gif/revision/latest?cb=20210519035047&path-prefix=ru" alt="Dadbattle">
+            <p>Pico</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Популярные моды -->
+      <div class="music-category">
+        <h3>Треки из модов</h3>
+        <div class="track-list">
+          <div class="track" data-audio="music\FNF-Sonic.exe-You-Cant-Run.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/2/24/SonicExeIdle2.5.gif/revision/latest?cb=20240213160719&path-prefix=ru" alt="Ballistic">
+            <p>You Can't Run (Sonic.EXE)</p>
+          </div>
+          <div class="track" data-audio="music\Tricky-Mod-JADS-Expurgation.mp3">
+            <img src="https://static.wikia.nocookie.net/fridaynightfunking/images/9/9d/TrickyMaskAnim.gif" alt="Expurgation">
+            <p>Expurgation (Tricky)</p>
+          </div>
+          <div class="track" data-audio="music\FNF-VS-Whitty-Ballistic.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/a/a3/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%A3%D0%B8%D1%82%D1%82%D0%B8.gif/revision/latest?cb=20210329173532&path-prefix=ru" alt="Termination">
+            <p>Ballistic (Whitty)</p>
+          </div>
+          <div class="track" data-audio="music\1039148_Friday-Night-Funkin-TABI-R.mp3">
+            <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/8/82/Tabi_New_Version.gif/revision/latest?cb=20220615133325&path-prefix=ru" alt="Genocide">
+            <p>Genocide (Tabi)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="music-player" preload="auto"></audio>
+  </section>
+
+
+  <!-- Персонажи -->
+  <section id="characters" class="section">
+    <h2>Основные персонажи</h2>
+    <div class="card-grid">
+
+      <div class="character-card" data-title="Boyfriend" data-info="Главный герой FNF. Молодой рэпер, борется в музыкальных баттлах за право быть с Girlfriend.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/5/5b/Boyfriend.gif/revision/latest?cb=20221230221743&path-prefix=ru" alt="Boyfriend">
+        <h3>Boyfriend</h3>
+        <p>Ритм-боец, борется за любовь</p>
+      </div>
+
+      <div class="character-card" data-title="Girlfriend" data-info="Дочь Daddy Dearest и Mommy Mearest. Всегда поддерживает Boyfriend’а, сидя на колонке.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/3/33/Girlgif1.gif/revision/latest?cb=20210518043416&path-prefix=ru" alt="Girlfriend">
+        <h3>Girlfriend</h3>
+        <p>Поддержка Boyfriend’a в баттлах</p>
+      </div>
+
+      <div class="character-card" data-title="Daddy Dearest" data-info="Отец Girlfriend и первый противник Boyfriend’а. Бывший рокер, не одобряет выбор дочери.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/0/0b/Dadgif1.gif/revision/latest?cb=20210518050238&path-prefix=ru" alt="Daddy Dearest">
+        <h3>Daddy Dearest</h3>
+        <p>Рок-папаша против любви</p>
+      </div>
+
+      <div class="character-card" data-title="Mommy Mearest" data-info="Мать Girlfriend, поп-звезда и соперница Boyfriend’а. Появляется на 4-й неделе.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/b/bd/Momgif.gif/revision/latest?cb=20210308031459&path-prefix=ru" alt="Mommy Mearest">
+        <h3>Mommy Mearest</h3>
+        <p>Поп-звезда и мама Girlfriend</p>
+      </div>
+
+      <div class="character-card" data-title="Pico" data-info="Наёмник и рэпер. Бывший парень Boyfriend’а. Появляется в 3-й неделе.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/1/16/Picogif1.gif/revision/latest?cb=20210519035047&path-prefix=ru" alt="Pico">
+        <h3>Pico</h3>
+        <p>С пушками и битами</p>
+      </div>
+
+      <div class="character-card" data-title="Skid and Pump" data-info="Два друга в хэллоуинских костюмах, появляются во 2-й неделе.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/1/19/Spookymonthgif.gif/revision/latest?cb=20210519035207&path-prefix=ru" alt="Skid and Pump">
+        <h3>Skid и Pump</h3>
+        <p>Танцоры из Хэллоуина</p>
+      </div>
+
+      <div class="character-card" data-title="Monster" data-info="Жуткий противник с лимонной головой. Появляется на 2-й и 5-й неделе.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/5/5f/Monster2.gif/revision/latest?cb=20210518044212&path-prefix=ru" alt="Monster">
+        <h3>Monster</h3>
+        <p>Лимонный ужас</p>
+      </div>
+
+      <div class="character-card" data-title="Senpai" data-info="Пиксельный антагонист из 6-й недели. Скромный, но зловещий.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/d/dc/Senpaigif1.gif/revision/latest?cb=20210518045450&path-prefix=ru" alt="Senpai">
+        <h3>Senpai</h3>
+        <p>Пиксельный враг-ухажёр</p>
+      </div>
+
+      <div class="character-card" data-title="Spirit" data-info="Пугающий дух, появляющийся после трансформации Senpai в 6-й неделе.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/a/a2/Spiritgif.gif/revision/latest?cb=20210518044410&path-prefix=ru" alt="Spirit">
+        <h3>Spirit</h3>
+        <p>Дух в пиксельном аду</p>
+      </div>
+
+      <div class="character-card" data-title="Tankman" data-info="Маскот Newgrounds и боец 7-й недели. Циничный и саркастичный.">
+        <img src="https://static.wikia.nocookie.net/friday-night-funkinn/images/2/2d/%D0%A2%D0%B0%D0%BD%D0%BA%D0%BC%D0%B5%D0%BD.gif/revision/latest?cb=20210425072507&path-prefix=ru" alt="Tankman">
+        <h3>Tankman</h3>
+        <p>Солдат из мемов</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Персонажи -->
+  <section id="mod-characters" class="section">
+    <h2>Персонажи из модов</h2>
+    <div class="card-grid">
+      <div class="character-card" data-title="Whitty" data-info="Один из первых модов. Взрывной характер и трек 'Ballistic'.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/a/a3/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%A3%D0%B8%D1%82%D1%82%D0%B8.gif/revision/latest?cb=20210329173532&path-prefix=ru" alt="Whitty">
+      <h3>Whitty</h3>
+      <p>Голова-бомба</p>
+    </div>
+
+    <div class="character-card" data-title="Garcello" data-info="Спокойный парень с трагичной историей. Призрачный стиль.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/2/2c/GarcelloAnim.gif/revision/latest?cb=20210722173344&path-prefix=ru" alt="Garcello">
+      <h3>Garcello</h3>
+      <p>Дымный друг</p>
+    </div>
+
+    <div class="character-card" data-title="Tricky" data-info="Безумный клоун из Madness Combat. Один из самых сложных модов.">
+      <img src="https://static.wikia.nocookie.net/fridaynightfunking/images/9/9d/TrickyMaskAnim.gif/revision/latest?cb=20211006180019" alt="Tricky">
+      <h3>Tricky</h3>
+      <p>Клоун Хаоса</p>
+    </div>
+
+    <div class="character-card" data-title="Tabi" data-info="Бывший парень GF, превращённый в скелета. Трек 'Genocide'.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/8/82/Tabi_New_Version.gif/revision/latest?cb=20220615133325&path-prefix=ru" alt="Tabi">
+      <h3>Tabi</h3>
+      <p>Ex-BF</p>
+    </div>
+
+    <div class="character-card" data-title="Agoti" data-info="Демон из цифрового мира. Энергичный и стильный мод.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/b/b3/AGOTIMiclessAnim.gif/revision/latest?cb=20210806070604&path-prefix=ru" alt="Agoti">
+      <h3>Agoti</h3>
+      <p>Цифровой демон</p>
+    </div>
+
+    <div class="character-card" data-title="Hex" data-info="Робот-баскетболист. Один из самых дружелюбных персонажей.">
+      <img src="https://static.wikia.nocookie.net/fridaynightfunking/images/2/24/HexAnim.gif/revision/latest?cb=20250502071638" alt="Hex">
+      <h3>Hex</h3>
+      <p>Баскетбот</p>
+    </div>  
+
+    <div class="character-card" data-title="Sarvente" data-info="Монахиня-демон из Mid-Fight Masses. Вежливая... пока не начнётся баттл.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/8/89/SarventeAnim.gif/revision/latest?cb=20210408193918&path-prefix=ru" alt="Sarvente">
+      <h3>Sarvente</h3>
+      <p>Церковная драма</p>
+    </div>
+
+    <div class="character-card" data-title="Sonic.EXE" data-info="Хоррор-версия Соника. Один из самых жутких и культовых модов.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/2/24/SonicExeIdle2.5.gif/revision/latest?cb=20240213160719&path-prefix=ru" alt="Sonic.EXE">
+      <h3>Sonic.EXE</h3>
+      <p>Жуть из пикселей</p>
+    </div>
+
+    <div class="character-card" data-title="Zardy" data-info="Пугало из Zardy’s Maze. Очень жёсткий мод с атмосферой ужаса.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/4/46/Zardy.gif/revision/latest?cb=20210416111825&path-prefix=ru" alt="Zardy">
+      <h3>Zardy</h3>
+      <p>Сельский ужас</p>
+    </div>
+
+    <div class="character-card" data-title="Shaggy" data-info="Мемный персонаж из Scooby-Doo с суперсилой. Мод с 9 клавишами!">
+      <img src="https://static.wikia.nocookie.net/fridaynightfunking/images/b/ba/ShaggyAnim.gif/revision/latest?cb=20210509223546" alt="Shaggy">
+      <h3>Shaggy</h3>
+      <p>Год-мем</p>
+    </div>
+
+    <div class="character-card" data-title="Seliver" data-info="Мистический и загадочный персонаж с уникальной атмосферой. Музыка в его моде полна неожиданностей и ужасающих поворотов.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/2/2f/SeleverAnim.gif/revision/latest?cb=20210514212442&path-prefix=ru" alt="Seliver">
+      <h3>Seliver</h3>
+      <p>Психоделический кошмар</p>
+    </div>
+
+    <div class="character-card" data-title="Monika" data-info="Из Doki Doki Literature Club. Использует глитчи и ломает правила.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/5/5e/HDMonika_Idle1.gif/revision/latest?cb=20211203201734&path-prefix=ru" alt="Monika">
+      <h3>Monika</h3>
+      <p>Литературный кошмар</p>
+    </div>
+
+    <div class="character-card" data-title="Matt" data-info="Спортсмен из Wii Sports. Сложнейший мод в стиле бокса.">
+      <img src="https://static.wikia.nocookie.net/real-literally-fnf/images/6/6a/Mattidle.gif/revision/latest?cb=20210812215615" alt="Matt">
+      <h3>Matt</h3>
+      <p>Wii-боец</p>
+    </div>
+
+    <div class="character-card" data-title="Ruv" data-info="Безумный напарник Sarvente с мощным голосом и агрессивными треками.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/9/9c/RuvAnim.gif/revision/latest?cb=20210408194448&path-prefix=ru" alt="Ruv">
+      <h3>Ruv</h3>
+      <p>Рок-священник</p>
+    </div>
+
+    <div class="character-card" data-title="Kapi" data-info="Милый кот-геймер с аркадных автоматов. Очень ритмичный мод.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/5/53/KapiAnim.gif/revision/latest?cb=20210708103341&path-prefix=ru" alt="Kapi">
+      <h3>Kapi</h3>
+      <p>Геймер-кот</p>
+    </div>
+
+    <div class="character-card" data-title="Bob" data-info="Пиксельный мемный персонаж. Мод с кринжем и хаосом.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/9/9f/%D0%91%D0%BE%D0%B1.gif/revision/latest?cb=20211210225354&path-prefix=ru" alt="Bob">
+      <h3>Bob</h3>
+      <p>Кринж-мем</p>
+    </div>
+
+    <div class="character-card" data-title="Tord" data-info="Из Eddsworld. Угрюмый парень с оружием и техникой. Финальная форма — гигантский мех.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/f/f7/Tord.gif/revision/latest?cb=20210508082200&path-prefix=ru" alt="Tord">
+      <h3>Tord</h3>
+      <p>Норвежский бунтарь</p>
+    </div>
+
+    <div class="character-card" data-title="Nonsense" data-info="Мета-персонаж, часто ломает четвёртую стену. Забавный и самоироничный.">
+      <img src="https://static.wikia.nocookie.net/fridaynightfunking/images/1/11/ANFNNonsenseConfusedIdle.gif/revision/latest?cb=20230715125501" alt="Nonsense">
+      <h3>Nonsense</h3>
+      <p>Антимод</p>
+    </div>
+
+    <div class="character-card" data-title="Hatsune Miku" data-info="Знаменитая вокалоид-айдол и (по фанону) сестра Бойфренда.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/a/ab/MikuAnim%D1%89%D1%89%D1%89%D1%89%D1%89%D1%89%D1%89%D1%89.gif/revision/latest?cb=20210811131450&path-prefix=ru" alt="Hatsune Miku">
+      <h3>Hatsune Miku</h3>
+      <p>Пиксель-айдол</p>
+    </div>
+
+    <div class="character-card" data-title="Bob" data-info="Мемный персонаж с квадратным лицом. Начинается невинно, а потом полнейший хаос.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/5/55/GDBobAnim.gif/revision/latest?cb=20210914150813&path-prefix=ru" alt="Bob">
+      <h3>Bob</h3>
+      <p>Кринж-король</p>
+    </div>
+
+    <div class="character-card" data-title="Bosip" data-info="Лучший друг Боба. Более спокойный и логичный, но всё равно попадает в дичь.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/2/2b/GDBosipAnim.gif/revision/latest?cb=20210922101515&path-prefix=ru" alt="Bosip">
+      <h3>Bosip</h3>
+      <p>VR-боец</p>
+    </div>
+
+    <div class="character-card" data-title="QT" data-info="Милая на вид девочка-робот из модa VS. QT. Начинается с дружелюбного баттла, но потом она превращается в нечто жуткое.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/7/7e/QTNormalIdleAnim.gif/revision/latest?cb=20220311172043&path-prefix=ru" alt="QT">
+      <h3>QT</h3>
+      <p>Робо-милота</p>
+    </div>
+
+    <div class="character-card" data-title="Camellia" data-info="Легендарный диджей и композитор EDM. Мод с его участием содержит невероятно быстрые и сложные треки.">
+      <img src="https://static.wikia.nocookie.net/real-literally-fnf/images/9/97/CamelliaIdleAnim.gif/revision/latest?cb=20210813133044" alt="Camellia">
+      <h3>Camellia</h3>
+      <p>EDM-босс</p>
+    </div>
+
+    <div class="character-card" data-title="Neon" data-info="Футуристичный и харизматичный танцор. Его мод выделяется неоном, хореографией и стильной визуальной подачей.">
+      <img src="https://static.wikia.nocookie.net/friday-night-funkin-mods/images/c/c1/NeonAnim.gif/revision/latest?cb=20211218130300&path-prefix=ru" alt="Neon">
+      <h3>Neon</h3>
+      <p>Свет в ритме</p>
+    </div>
+  </section>
+
+  <h2 id="fnf-guide" class="guide-title">Гайды</h2>
+  <section class="fnf-guide">
+    <h2>Топ-5 ошибок новичков в Friday Night Funkin’</h2>
+    <p>Новые игроки часто совершают одни и те же ошибки, из-за которых прохождение кажется сложнее, чем оно есть. Вот главные промахи и способы их избежать.</p>
+
+    <hr>
+
+    <div class="mistake">
+      <h3>1.Слишком сильный упор на визуал, а не на ноты</h3>
+      <p>Проблема: Новички часто смотрят на анимацию персонажей (например, как танцует BF или оппонент) и пропускают ноты.</p>
+      <p>Как исправить:</p>
+      <ul>
+        <li>Фокусируйтесь на стрелках, а не на фоне.</li>
+        <li>Настройте скролл-скорость, чтобы ноты не сливались.</li>
+      </ul>
+    </div>
+
+    <div class="mistake">
+      <h3>2.Паника при потере здоровья</h3>
+      <p>Проблема: Игрок видит, что шкала здоровья опустошается, начинает хаотично жать все кнопки подряд и полностью сбивается с ритма.</p>
+      <p>Как исправить:</p>
+      <ul>
+        <li>Не пытайтесь отыграться сразу – лучше пропустить 1-2 ноты, чем потерять комбо.</li>
+        <li>Тренируйтесь в "Practice Mode", чтобы привыкнуть к сложным участкам.</li>
+      </ul>
+    </div>
+
+    <div class="mistake">
+      <h3>3.Неправильная постановка рук</h3>
+      <p>Проблема: Использование неудобной раскладки (например, игра одним пальцем) или слишком сильное напряжение кистей.</p>
+      <p>Как исправить:</p>
+      <ul>
+        <li>Попробуйте альтернативные раскладки (например, DFJK вместо WASD).</li>
+        <li>Держите пальцы расслабленными – не вжимайте кнопки с силой.</li>
+      </ul>
+    </div>
+
+    <div class="mistake">
+      <h3>4.Игнорирование длинных нот (Hold Notes)</h3>
+      <p>Проблема: Новички отпускают длинные ноты раньше времени, из-за чего теряют очки и здоровье.</p>
+      <p>Как исправить:</p>
+      <ul>
+        <li>Удерживайте кнопку, пока полоска не пройдет полностью.</li>
+        <li>Слушайте музыку – часто длинные ноты соответствуют протяжным звукам.</li>
+      </ul>
+    </div>
+
+    <div class="mistake">
+      <h3>5.Попытки играть сложные моды сразу</h3>
+      <p>Проблема: Некоторые сразу лезут в "Expurgation" (Tricky) или "Termination" (MX), не освоив базу, и разочаровываются.</p>
+      <p>Как исправить:</p>
+      <ul>
+        <li>Начните с официальной игры (Weeks 1-7).</li>
+        <li>Повышайте сложность постепенно:
+          <ul>
+            <li>Обычная версия → Лёгкие моды (VS Hex, VS Whitty)</li>
+            <li>→ Хардкорные моды (VS Matt, VS Sonic.exe)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Модальное окно -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+  <audio id="click-sound" src="music\clickText.ogg" preload="auto"></audio>
+
+  
+
+  <!-- Скрипт -->
+  <script>
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.character-card').forEach(card => {
+      card.addEventListener('click', () => {
+        modalTitle.textContent = card.dataset.title;
+        modalText.textContent = card.dataset.info;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  </script> 
+  
+  <script>
+  // Получаем все карточки персонажей
+    const characterCards = document.querySelectorAll('.character-card');
+
+  // Получаем элемент audio
+    const clickSound = document.getElementById('click-sound');
+
+  // Добавляем обработчик события для каждой карточки персонажа
+    characterCards.forEach(card => {
+      card.addEventListener('click', () => {
+      clickSound.currentTime = 0; // Сбрасываем время воспроизведения на начало
+      clickSound.play(); // Воспроизводим звук
+    });
+    });
+  </script>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+  <script>
+    const player = document.getElementById('music-player');
+    let currentTrack = null;
+
+    document.querySelectorAll('.track').forEach(track => {
+      track.addEventListener('click', function() {
+        const audioFile = this.getAttribute('data-audio');
+
+      // Если нажали на уже активный трек — остановить воспроизведение
+        if (currentTrack === this) {
+          player.pause();
+          player.currentTime = 0;
+          this.classList.remove('active');
+          currentTrack = null;
+        } else {
+        // Воспроизвести новый трек
+          player.src = audioFile;
+          player.play();
+
+        // Удалить активность со всех треков и активировать текущий
+          document.querySelectorAll('.track').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          currentTrack = this;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
